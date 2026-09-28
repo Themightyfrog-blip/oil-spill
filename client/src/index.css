@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode Palette: Clean, Spacious, Zero Blue or Purple */
+    --background: 0 0% 98%;
+    --foreground: 240 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 15%;
+
+    /* Burgundy Primary */
+    --primary: 338 80% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 66%;
+    --secondary-foreground: 240 10% 15%;
+
+    --muted: 0 0% 90%;
+    --muted-foreground: 240 5% 40%;
+
+    --accent: 0 0% 85%;
+    --accent-foreground: 240 10% 15%;
+
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
+    --ring: 338 80% 20%;
+
+    --radius: 0.75rem;
+
+    /* Semantic color mappings for legacy helper classes */
+    --text-primary: #18181b;
+    --text-secondary: #52525b;
+    --text-muted: #71717a;
+    --border-subtle: #e4e4e7;
+    --border-cyan: #5C0A28;
+    --primary-light: rgba(92, 10, 40, 0.12);
+  }
+}
+
+/* ── Reset & Core Typography ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* Monospace font utility mapped to generic Inter per request */
+.mono, .font-mono {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ── Leaflet Light Customizations ── */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f5 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #18181b !important;
+  border: 1px solid #e4e4e7 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+  padding: 4px !important;
+}
+
+.leaflet-popup-tip {
+  background: #ffffff !important;
+  border: 1px solid #e4e4e7 !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: #ffffff !important;
+  color: #52525b !important;
+  border-color: #e4e4e7 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #f4f4f5 !important;
+  color: #5C0A28 !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #71717a !important;
+  font-size: 10px !important;
+}
+.leaflet-control-attribution a {
+  color: #52525b !important;
+  text-decoration: none !important;
+}
+
+/* Custom DivIcons */
+.custom-vessel-marker, .custom-source-marker {
+  background: transparent;
+  border: none;
+}
+
+/* Pulse animation */
+@keyframes radar-pulse {
+  0% { transform: scale(0.95); opacity: 0.9; }
+  50% { transform: scale(1.3); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.9; }
+}
+
+.animate-pulse-glow {
+  animation: radar-pulse 2s infinite ease-in-out;
+}
+
+/* Print styling */
+@media print {
+  .no-print, header, aside, .chat-drawer, .chat-modal {
+    display: none !important;
+  }
+  body, main {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .printable-report {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+}
