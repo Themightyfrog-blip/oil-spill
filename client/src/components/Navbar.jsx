@@ -116,7 +116,7 @@ const Navbar = () => {
               <div>
                 <div className="flex items-center gap-1.5 sm:gap-2">
                   <span className="font-bold text-base sm:text-lg tracking-tight text-foreground font-mono">
-                    CODEMONS
+                    OILTRACE
                   </span>
                 </div>
                 <p className="text-[10px] sm:text-xs font-mono text-muted-foreground tracking-wider uppercase font-medium mt-0 sm:mt-0.5 whitespace-nowrap">
@@ -140,9 +140,9 @@ const Navbar = () => {
                       selectIncident(e.target.value);
                       if (e.target.value) navigate('/overview');
                     }}
-                    className="bg-transparent text-[10px] sm:text-sm font-semibold text-foreground cursor-pointer outline-none max-w-[90px] sm:max-w-[210px] truncate pr-1 appearance-none font-mono"
+                    className="bg-transparent text-[10px] sm:text-sm font-semibold text-foreground cursor-pointer outline-none max-w-[90px] sm:max-w-[140px] truncate pr-1 appearance-none font-mono"
                   >
-                    <option value="" disabled>Select Incident...</option>
+                    <option value="" disabled>Select...</option>
                     {incidents.map((inc) => (
                       <option key={inc.id} value={inc.id} className="text-foreground bg-card py-1">
                         {inc.id}
@@ -233,10 +233,10 @@ const Navbar = () => {
                     selectIncident(e.target.value);
                     if (e.target.value) navigate('/overview');
                   }}
-                  className="bg-transparent text-sm font-semibold text-foreground cursor-pointer outline-none max-w-[210px] truncate pr-2 appearance-none font-mono"
+                  className="bg-transparent text-sm font-semibold text-foreground cursor-pointer outline-none max-w-[140px] truncate pr-2 appearance-none font-mono"
                 >
                   <option value="" disabled>
-                    ⚠️ Select Incident ({incidents.length} Alerts)...
+                    ⚠️ Select ({incidents.length} Alerts)
                   </option>
                   {incidents.map((inc) => (
                     <option key={inc.id} value={inc.id} className="text-foreground bg-card py-1">
